@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  generator:
+    build: rand-generator
+    environment:
+      rand.generator.security: ${RAND_GENERATOR_SECURITY}
+
+  tokenizer:
+    build: rand-tokenizer
+    links:
+      - generator
+      - database
+    environment:
+      spring.datasource.url: ${DATASOURCE_URL}
+      spring.datasource.username: ${DATABASE_USERNAME}
+      spring.datasource.password: ${DATABASE_PASSWORD}
+      rand.generator.url: ${RAND_GENERATOR_URL}
+      rand.token.frequency: ${RAND_TOKEN_FREQUENCY}
+
+  database:
+    image: postgres:alpine
+    environment:
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}

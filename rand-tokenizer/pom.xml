@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <groupId>hr.rba</groupId>
+        <artifactId>rand-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>rand-tokenizer</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>rand-tokenizer-client</module>
+        <module>rand-tokenizer-rest</module>
+        <module>rand-tokenizer-jobs</module>
+        <module>rand-tokenizer-persistence</module>
+        <module>rand-tokenizer-persistence-jdbc</module>
+        <module>rand-tokenizer-service</module>
+        <module>rand-tokenizer-service-core</module>
+        <module>rand-tokenizer-entities</module>
+        <module>rand-tokenizer-application</module>
+    </modules>
+</project>
